@@ -41,3 +41,23 @@ void BlueTooth_Init(void){
 	
 	USART_Cmd(USART1, ENABLE);
 }
+
+void BlueTooth_SendByte(uint8_t Byte){
+	USART_SendData(USART1, Byte);
+	while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
+}
+
+uint32_t BlueTooth_Pow(uint32_t X, uint32_t Y){
+	uint32_t Result = 1;
+	while(Y--){
+		Result *= X;
+	}
+	return Result;
+}
+
+void BlueTooth_SendNumber(uint32_t Number, uint8_t Length){
+	uint8_t i;
+	for(i = 0; i < Length; i++){
+		BlueTooth_SendByte(Number / BlueTooth_Pow(10, Length - i - 1) % 10 + '0');
+	}
+}

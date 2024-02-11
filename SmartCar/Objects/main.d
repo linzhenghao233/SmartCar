@@ -33,3 +33,4 @@
 .\objects\main.o: .\Hardware\Car.h
 .\objects\main.o: .\Hardware\BlueTooth.h
 .\objects\main.o: .\Hardware\Servo.h
+.\objects\main.o: .\Hardware\Ultrasonic.h

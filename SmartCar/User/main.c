@@ -4,17 +4,25 @@
 #include "Car.h"
 #include "BlueTooth.h"
 #include "Servo.h"
+#include "Ultrasonic.h"
+
+float Distance;
 
 int main(void){
 	OLED_Init();
 	Car_Init();
 	BlueTooth_Init();
 	Servo_Init();
-	
-	//Car_Advance();
-	
+	Ultrasonic_Init();
+
 	while(1){
-		
+		Distance = Ultrasonic_Distance();
+		OLED_ShowNum(1, 1, Distance, 3);
+		//BlueTooth_SendNumber(Distance, 3);
+		if(Distance < 20){
+			Car_Stop();
+		}
+		Delay_ms(1000);
 	}
 }
 

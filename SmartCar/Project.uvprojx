@@ -750,6 +750,16 @@
               <FileType>5</FileType>
               <FilePath>.\Hardware\Servo.h</FilePath>
             </File>
+            <File>
+              <FileName>Ultrasonic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\Ultrasonic.c</FilePath>
+            </File>
+            <File>
+              <FileName>Ultrasonic.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\Ultrasonic.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
